@@ -5,27 +5,43 @@ import { checkRole } from "../middlewares/checkRole";
 
 const router = Router();
 
-//Get all users
-router.get("/", [checkJwt, checkRole(["ADMIN"])], UserController.listAll);
+/**
+ * Route: /user
+ * Action: GET all users
+ * Scope: Public
+ */
+router.get("/", UserController.listAll);
 
-// Get one user
-router.get(
-  "/:id([0-9]+)",
-  [checkJwt, checkRole(["ADMIN"])],
-  UserController.getOneById
-);
+/**
+ * Route: /user/:id
+ * Action: GET a user
+ * Scope: Public
+ */
+router.get("/:id([0-9]+)", UserController.getOneById);
 
-//Create a new user
+/**
+ * Route: /user
+ * Action: POST a new user
+ * Scope: Private
+ */
 router.post("/", [checkJwt, checkRole(["ADMIN"])], UserController.newUser);
 
-//Edit one user
+/**
+ * Route: /user/:id
+ * Action: PATCH a user
+ * Scope: Private
+ */
 router.patch(
   "/:id([0-9]+)",
   [checkJwt, checkRole(["ADMIN"])],
   UserController.editUser
 );
 
-//Delete one user
+/**
+ * Route: /user/:id
+ * Action: DELETE a user
+ * Scope: Private
+ */
 router.delete(
   "/:id([0-9]+)",
   [checkJwt, checkRole(["ADMIN"])],

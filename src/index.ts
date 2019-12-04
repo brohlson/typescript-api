@@ -8,6 +8,8 @@ import * as cors from "cors";
 import { success, info, error, warning } from "./logger";
 import routes from "./routes";
 
+const PORT: number = 9000;
+
 createConnection()
   .then(async connection => {
     // create express app
@@ -20,12 +22,12 @@ createConnection()
     app.use("/", routes);
 
     // start express server
-    app.listen(3000);
+    app.listen(PORT);
 
     // console utilites
-    success("Express server has started on port 3000");
-    info("Express server has started on port 3000");
-    error("Express server has started on port 3000");
-    warning("Express server has started on port 3000");
+    success(`Express server has started on port ${PORT}`);
+    info(`Express server has started on port ${PORT}`);
+    error(`Express server has started on port ${PORT}`);
+    warning(`Express server has started on port ${PORT}`);
   })
   .catch(error => console.log(error));
