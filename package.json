@@ -1,5 +1,5 @@
 {
-  "name": "typeorm-api",
+  "name": "typescript-api",
   "version": "0.0.1",
   "description": "Starter files for Typescript/Express API with TypeORM",
   "license": "MIT",
