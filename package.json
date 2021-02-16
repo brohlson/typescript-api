@@ -23,7 +23,7 @@
     "helmet": "^3.21.2",
     "jsonwebtoken": "^8.5.1",
     "reflect-metadata": "^0.1.10",
-    "sqlite3": "^4.0.3",
+    "sqlite3": "^5.0.2",
     "ts-node-dev": "^1.0.0-pre.44",
     "typeorm": "0.2.20"
   },
